@@ -13,43 +13,6 @@ An **end-to-end Business Intelligence project** covering the full pipeline from 
 
 ---
 
-## 📂 Project Structure
-
-```
-
-├───data  source data
-│
-├───docs
-│       the etl process.png                         # Full ETL pipeline overview
-│       staging fuel price package .png             # SSIS package — fuel price staging
-│       staging exhange rates.png                   # SSIS package — exchange rates staging
-│       dwh dimensions.png                          # DWH dimension tables schema
-│       dwh facts.png                               # DWH fact tables schema
-│       dwh_time_dim.png                            # Time dimension detail
-│
-└───scripts
-    │   initialize_database.sql                     # Master script — creates databases
-    │
-    ├───dwh
-    │       00_Create_DWH_Errors.sql                # Error logging table for the DWH
-    │       01_Create_DWH_Dim_Currency_Table.sql    # Currency dimension table
-    │       02_Create_DWH_Dim_Country_Table.sql     # Country dimension table
-    │       03_Create_DWH_Dim_Time_Table.sql        # Time dimension table
-    │       04_Create_DWH_Fact_Fuel_Price_With_Taxes.sql   # Fact table — prices with taxes
-    │       05_Create_DWH_Fact_Fuel_Price_WO_Taxes.sql     # Fact table — prices without taxes
-    │       06_Create_DWH_Fact_Exchange_Rates.sql          # Fact table — daily exchange rates
-    │
-    └───staging
-            01_Create_Insert_Dim_Currency_Table.sql # Staging — create & populate currency dim
-            02_Create_Insert_Dim_Country_Table.sql  # Staging — create & populate country dim
-            03_Create_Insert_Dim_Time_Table.sql     # Staging — create & populate time dim
-            04_Create_Fact_Fuel_Price_With_Taxes.sql  # Staging — load fuel prices with taxes
-            05_Create_Fact_Fuel_Price_WO_Taxes.sql    # Staging — load fuel prices without taxes
-            06_Create_Fact_Exchange_Rates.sql          # Staging — load ECB exchange rates
-```
-
----
-
 ## 🗄️ Data Sources
 
 | Data | Source | Format | Granularity |
@@ -127,3 +90,40 @@ Power BI connects directly to the DWH for interactive dashboards, trend analysis
 - Petrol vs. Diesel price trends from 2005 to 2023 across 10 European countries
 - Tax vs. pre-tax price comparison to isolate government tax contribution
 - Fuel price comparison in JPY, CAD, and 20 other currencies to separate real price changes from currency fluctuations
+
+---
+## 📂 Project Structure
+
+```
+
+├───data  source data
+│
+├───docs
+│       the etl process.png                         # Full ETL pipeline overview
+│       staging fuel price package .png             # SSIS package — fuel price staging
+│       staging exhange rates.png                   # SSIS package — exchange rates staging
+│       dwh dimensions.png                          # DWH dimension tables schema
+│       dwh facts.png                               # DWH fact tables schema
+│       dwh_time_dim.png                            # Time dimension detail
+│
+└───scripts
+    │   initialize_database.sql                     # Master script — creates databases
+    │
+    ├───dwh
+    │       00_Create_DWH_Errors.sql                # Error logging table for the DWH
+    │       01_Create_DWH_Dim_Currency_Table.sql    # Currency dimension table
+    │       02_Create_DWH_Dim_Country_Table.sql     # Country dimension table
+    │       03_Create_DWH_Dim_Time_Table.sql        # Time dimension table
+    │       04_Create_DWH_Fact_Fuel_Price_With_Taxes.sql   # Fact table — prices with taxes
+    │       05_Create_DWH_Fact_Fuel_Price_WO_Taxes.sql     # Fact table — prices without taxes
+    │       06_Create_DWH_Fact_Exchange_Rates.sql          # Fact table — daily exchange rates
+    │
+    └───staging
+            01_Create_Insert_Dim_Currency_Table.sql # Staging — create & populate currency dim
+            02_Create_Insert_Dim_Country_Table.sql  # Staging — create & populate country dim
+            03_Create_Insert_Dim_Time_Table.sql     # Staging — create & populate time dim
+            04_Create_Fact_Fuel_Price_With_Taxes.sql  # Staging — create fuel prices with taxes
+            05_Create_Fact_Fuel_Price_WO_Taxes.sql    # Staging — create fuel prices without taxes
+            06_Create_Fact_Exchange_Rates.sql          # Staging — create ECB exchange rates
+```
+
