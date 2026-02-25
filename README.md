@@ -16,7 +16,7 @@ An **end-to-end Business Intelligence project** covering the full pipeline from 
 ## 📂 Project Structure
 
 ```
-C:.
+
 ├───data  source data
 │
 ├───docs
@@ -81,7 +81,8 @@ The project follows a standard **Star Schema** for the data warehouse.
 | **Fuel Price (Without Taxes)** | Weekly prices excluding tax | Weekly |
 | **Exchange Rates** | Daily conversion rates for 23 currencies | Daily |
 
----
+here is the __data model__ : 
+![star schema model](docs/star%20schema.png)
 
 ## ⚙️ ETL Process
 
