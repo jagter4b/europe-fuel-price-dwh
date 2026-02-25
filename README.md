@@ -82,6 +82,7 @@ The project follows a standard **Star Schema** for the data warehouse.
 | **Exchange Rates** | Daily conversion rates for 23 currencies | Daily |
 
 here is the __data model__ : 
+
 ![star schema model](docs/star%20schema.png)
 
 ## ⚙️ ETL Process
